@@ -1,0 +1,4 @@
+npm install typescript -g
+npm install -g npm@9.6.6
+tsc --init
+tsc -w
