@@ -36,6 +36,13 @@ let nomeCompleto = unirObj(nome, sobreNome);
 // console.log(nomeCompleto["sobrenome"]);
 //------------------------------------------------------
 // 4 - constraints
+function maiorNumero(num1, num2) {
+    let maior;
+    let num1 = this.num1;
+    let num2 = this.num2;
+    if ()
+        return maior;
+}
 //------------------------------------------------------
 //------------------------------------------------------
 //------------------------------------------------------
