@@ -56,17 +56,25 @@ let nomeCompleto = unirObj(nome, sobreNome);
 
 //------------------------------------------------------
 // 4 - constraints
-function maiorNumero<T extends number | string>(num1: T, num2: T): T {
-    let maior: T;
-    let num1 = this.num1;
-    let num2 = this.num2;
-    
-    if
 
+function maiorNumero<T extends number | string>(num1: T, num2: T): T {
+    
+    let maior: T;
+    
+    if (num1 > num2) {
+        maior = num1;
+    } else {
+        maior = num2;
+    }
 
     return maior;
     
 }
+
+// console.log(maiorNumero(2, 5));
+// console.log(maiorNumero("23", "41"));
+// console.log(maiorNumero(12, "11"));
+
 
 
 
