@@ -184,6 +184,9 @@ class Coordenada {
     }
 }
 
+
+
+
 const lugar = new Coordenada();
 
 // lugar.alterarX = 25;
