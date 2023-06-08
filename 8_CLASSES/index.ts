@@ -123,19 +123,81 @@ class Caminhao {
 
 const volvo = new Caminhao("Volvo", 500);
 
-console.log(volvo);
-volvo.detalhar();
+// console.log(volvo);
+// volvo.detalhar();
 
 //------------------------------------------------------
 // 07 - Getters
 
+// cria classe Pessoa com construtor
+// cria get nome completo
+
+class Pessoa {
+    nome;
+    sobrenome;
+
+    constructor(nome: string, sobrenome: string) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+    }
+
+    public get nomeCompleto() : string {
+        return `A pessoa se chama ${this.nome} ${this.sobrenome}`;
+    }
+}
+
+const pessoa1 = new Pessoa("Deniel", "Rocha Diniz");
+
+// console.log(pessoa1.nome);
+// console.log(pessoa1.sobrenome);
+// console.log(pessoa1.nomeCompleto);
+
+//------------------------------------------------------
+// 08 - Setters
+
+class Coordenada {
+    x!: number;
+    y!: number;
+
+    public set alterarX(v : number) {
+        
+        if (v <= 0) {
+            console.log(`Você tentou mudar o valor de X para ${v} mas não pode ser menor que 1`);
+            return;
+            
+        } else {
+            this.x = v;
+            console.log(`o valor de X é ${lugar.x}`);
+        }
+    }
+
+    public set alterarY(v : number) {
+        
+        if (v <= 0) {
+            console.log(`Você tentou mudar o valor de X para ${v} mas não pode ser menor que 1`);
+            return;
+            
+        } else {
+            this.y = v;
+            console.log(`o valor de Y é ${lugar.y}`);
+        }
+    }
+}
+
+const lugar = new Coordenada();
+
+// lugar.alterarX = 25;
+// lugar.alterarX = -22;
+// lugar.alterarY = 45;
+// lugar.alterarY = -11;
 
 
 //------------------------------------------------------
-// 08 - 
+// 09 - Implements (herança de interface)
 
-//------------------------------------------------------
-// 09 - 
+// criar interface com um atributo
+// criar classe implementando a interface anterior
+
 
 //------------------------------------------------------
 // 10 - 
