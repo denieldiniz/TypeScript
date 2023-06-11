@@ -13,6 +13,10 @@ usuario1.idade = 41;
 //------------------------------------------------------
 // 02 - Constructor
 class NewUser {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
 }
 const joao = new NewUser("João", 23);
 // console.log(joao);
