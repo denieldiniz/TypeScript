@@ -291,14 +291,22 @@ class ParPropProd {
         this.quantidade = quantidade;
         this.preco = preco;
     }
+    get getQuantidade() {
+        return this.quantidade;
+    }
+    get getPreco() {
+        return this.preco;
+    }
 }
 const camiseta = new ParPropProd("regata branca", 20, 19.90);
 console.log(camiseta);
-console.log(camiseta.nome);
+// console.log(camiseta.nome);
+// console.log(camiseta.getPreco);
+// console.log(camiseta.getQuantidade);
 //------------------------------------------------------
-// 17 -
+// 17 - Class expressions
 //------------------------------------------------------
-// 18 -
+// 18 - 
 //------------------------------------------------------
-// 19 -
+// 19 - 
 // https://vscode.dev/profile/github/e9387331b0b6075f2ca9f26e2d1e3d64

@@ -418,26 +418,107 @@ const objGenerico3 = new ClasseGenerica(2, "teste");
 // 16 - Parameter properties
 
 class ParPropProd {
-    constructor(public nome: string, private quantidade: number, private preco: number) {
+
+    constructor(
+        public nome: string, 
+        private quantidade: number, 
+        private preco: number
+    ) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
+    }
+    
+    public get getQuantidade(): number {
+        return this.quantidade;
+    }
+
+    public get getPreco(): number {
+        return this.preco;
     }
 }
 
 const camiseta = new ParPropProd("regata branca", 20, 19.90);    
 console.log(camiseta);
-console.log(camiseta.nome);
+// console.log(camiseta.nome);
+// console.log(camiseta.getPreco);
+// console.log(camiseta.getQuantidade);
+
+//------------------------------------------------------
+// 17 - Class expressions
+
 
 
 //------------------------------------------------------
-// 17 -
+// 18 - 
 
 //------------------------------------------------------
-// 18 -
+// 19 - 
 
-//------------------------------------------------------
-// 19 -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
