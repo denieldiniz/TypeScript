@@ -494,13 +494,10 @@ class Cachorro {
     nome!: string;
 }
 
-const sadan: Cachorro = new Gato();
-
-console.log(sadan.constructor.name);
-
-sadan.nome = "Sadan Russein";
-
-console.log(sadan.nome);
+// const sadan: Cachorro = new Gato();
+// console.log(sadan.constructor.name);
+// sadan.nome = "Sadan Russein";
+// console.log(sadan.nome);
 
 
 

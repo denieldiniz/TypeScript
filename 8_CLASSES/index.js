@@ -337,8 +337,8 @@ class Gato {
 }
 class Cachorro {
 }
-const sadan = new Gato();
-console.log(sadan.constructor.name);
-sadan.nome = "Sadan Russein";
-console.log(sadan.nome);
+// const sadan: Cachorro = new Gato();
+// console.log(sadan.constructor.name);
+// sadan.nome = "Sadan Russein";
+// console.log(sadan.nome);
 // https://vscode.dev/profile/github/e9387331b0b6075f2ca9f26e2d1e3d64
