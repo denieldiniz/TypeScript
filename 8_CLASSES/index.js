@@ -13,10 +13,6 @@ usuario1.idade = 41;
 //------------------------------------------------------
 // 02 - Constructor
 class NewUser {
-    constructor(nome, idade) {
-        this.nome = nome;
-        this.idade = idade;
-    }
 }
 const joao = new NewUser("João", 23);
 // console.log(joao);
@@ -299,14 +295,46 @@ class ParPropProd {
     }
 }
 const camiseta = new ParPropProd("regata branca", 20, 19.90);
-console.log(camiseta);
+// console.log(camiseta);
 // console.log(camiseta.nome);
 // console.log(camiseta.getPreco);
 // console.log(camiseta.getQuantidade);
 //------------------------------------------------------
 // 17 - Class expressions
+// criar vaiavel que recebe uma classe com generic <T> e um atributo
+const classeGen = class {
+    constructor(nome) {
+        this.nome = nome;
+        this.nome = nome;
+    }
+};
+const cidadao = new classeGen("Isa Dionne");
+// console.log(cidadao.nome);
+// console.log(cidadao);
 //------------------------------------------------------
-// 18 - 
+// 18 - Abstract class
+class ClasseAbstrata {
+}
+class ExtendeAbstrata extends ClasseAbstrata {
+    constructor(nome) {
+        super(); // ver o motivo
+        this.nome = nome;
+        this.nome = nome;
+    }
+    mostraNome() {
+        console.log(`O nome é ${this.nome}`);
+    }
+}
+const objAbstrata = new ExtendeAbstrata("Zizi");
+// console.log(objAbstrata.mostraNome());
 //------------------------------------------------------
-// 19 - 
+// 19 - Relações entre classes
+class Gato {
+}
+class Cachorro {
+}
+const sadan = new Gato();
+console.log(sadan.constructor.name);
+sadan.nome = "Sadan Russein";
+console.log(sadan.nome);
 // https://vscode.dev/profile/github/e9387331b0b6075f2ca9f26e2d1e3d64
