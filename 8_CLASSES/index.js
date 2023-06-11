@@ -124,33 +124,181 @@ class Coordenada {
     }
 }
 const lugar = new Coordenada();
-// lugar.alterarX = 25;
-// lugar.alterarX = -22;
-// lugar.alterarY = 45;
-// lugar.alterarY = -11;
+class PostBlog {
+    constructor(titulo) {
+        this.titulo = titulo;
+    }
+    tituloManchete() {
+        return `O titulo do post é: ${this.titulo}`;
+    }
+}
+const postagem = new PostBlog("Notícia Urgente");
+// console.log(postagem.tituloManchete());
+//----------------- outra classe implementando MostraTitulo
+class TesteInterface {
+    constructor(novoTitulo) {
+        this.novoTitulo = novoTitulo;
+    }
+    tituloManchete() {
+        return `O novo titulo é: ${this.novoTitulo}`;
+    }
+}
+const novaPostagem = new TesteInterface("Novo título para a postagem.");
+// console.log(novaPostagem.tituloManchete());
 //------------------------------------------------------
-// 09 - Implements (herança de interface)
-// criar interface com um atributo
-// criar classe implementando a interface anterior
+// 10 - Override de métodos
+// cria classe com um metodo
+// cria outra classe extendendo a primeira sobrescrevendo o metodo (testando antes e depois)
+class classePai {
+    metodoEscrever(textoInserido) {
+        this.texto = textoInserido;
+        console.log(`Escrevendo a partir da classe pai: ${this.texto}`);
+    }
+}
+class ClasseFilha extends classePai {
+    metodoEscrever(textoInserido) {
+        this.texto = textoInserido;
+        console.log(`Escrevendo a partir da classe filha: ${this.texto}`);
+    }
+}
+// usando a classe pai
+const pai = new classePai;
+// pai.metodoEscrever("Mensagem recebida na classe Pai.");
+// usando a classe filha
+const filha = new ClasseFilha;
+// filha.metodoEscrever("Mensagem recebida na a classe Filha.");
 //------------------------------------------------------
-// 10 - 
+// Visibilidade
+// public       << todos acessam
+// protected    << subclasses acessam 
+// private      << somente a própria classe acessa
 //------------------------------------------------------
-// 11 - 
+// 11 - Public
+// atributo da classe pai acessível como se fosse do próprio contexto
+class A {
+    constructor() {
+        this.atributo = 10;
+    }
+}
+class B extends A {
+}
+const instanciaDeB = new B();
+// console.log(`Atributo public: ${instanciaDeB.atributo}`);
 //------------------------------------------------------
-// 12 - 
+// 12 - Protected
+// atributo da classe pai so acessivel via metodo
+class C {
+    constructor() {
+        this.atributo = 20;
+    }
+    getAtributo() {
+        return this.atributo;
+    }
+    metodoProtegido() {
+        return "Mensagem enviada por método protegido da classe C chamado por método publico da classe D.";
+    }
+}
+class D extends C {
+    executaMetodoProtegido() {
+        return this.metodoProtegido();
+    }
+}
+const instanciaDeD = new D();
+// console.log(`Atributo protected: ${instanciaDeD.getAtributo()}`);
+// console.log(instanciaDeD.executaMetodoProtegido());
 //------------------------------------------------------
-// 13 - 
+// 13 - Private
+class E {
+    constructor() {
+        this.atributo = 30;
+    }
+    mostrarAtributo() {
+        return this.atributo;
+    }
+}
+const instanciaDeE = new E();
+// console.log(`Atributo private em E: ${instanciaDeE.mostrarAtributo()}`);
+class F extends E {
+    mostrarAtributoDaPai() {
+        return this.mostrarAtributo() * 2;
+    }
+}
+const instanciaDeF = new F();
+// console.log(`Atributo private em F: ${instanciaDeF.mostrarAtributoDaPai()}`);
 //------------------------------------------------------
-// 14 - 
+// 14 - Static members
+class elementosEstaticos {
+    static funcaoEstatica() {
+        console.log(`Esse método é do tipo estático`);
+    }
+}
+elementosEstaticos.atributoEstatico = "Informação estática";
+// console.log(elementosEstaticos.atributoEstatico);
+// elementosEstaticos.funcaoEstatica();
 //------------------------------------------------------
-// 15 - 
+// 15 - Generic class
+class ClasseGenerica {
+    constructor(t, u) {
+        this.primeiro = t;
+        this.segundo = u;
+    }
+    get getPrimeiro() {
+        return this.primeiro;
+    }
+    get getSegundo() {
+        return this.segundo;
+    }
+    set setPrimeiro(v) {
+        this.primeiro = v;
+    }
+    set setSegundo(v) {
+        this.segundo = v;
+    }
+    get statusObj() {
+        if (typeof (this.primeiro) === "string" || typeof (this.segundo) === "string") {
+            //concatenar
+            return (`A cocatenação dos valores inseridos é "${String(this.primeiro) + " " + String(this.segundo)}", sendo dos tipos ${typeof (this.primeiro)} e ${typeof (this.segundo)} respectivamente.\n\n`);
+        }
+        else {
+            //somar 
+            return (`A soma dos valores inseridos é igual a "${Number(this.primeiro) + Number(this.segundo)}" sendo ambos do tipo number.\n\n`);
+        }
+    }
+}
+// // usando strings
+const objGenerico1 = new ClasseGenerica("Deniel", "Rocha Diniz");
+// console.log(objGenerico1.getPrimeiro);
+// console.log(objGenerico1.getSegundo);
+// console.log(objGenerico1.statusObj);
+// // usando number
+const objGenerico2 = new ClasseGenerica(5, 3);
+// console.log(objGenerico2.getPrimeiro);
+// console.log(objGenerico2.getSegundo);
+// console.log(objGenerico2.statusObj);
+// // usando number e string juntos
+const objGenerico3 = new ClasseGenerica(2, "teste");
+// console.log(objGenerico3.getPrimeiro);
+// console.log(objGenerico3.getSegundo);
+// console.log(objGenerico3.statusObj);
 //------------------------------------------------------
-// 16 - 
+// 16 - Parameter properties
+class ParPropProd {
+    constructor(nome, quantidade, preco) {
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+    }
+}
+const camiseta = new ParPropProd("regata branca", 20, 19.90);
+console.log(camiseta);
+console.log(camiseta.nome);
 //------------------------------------------------------
-// 17 - 
+// 17 -
 //------------------------------------------------------
-// 18 - 
+// 18 -
 //------------------------------------------------------
-// 19 - 
-//------------------------------------------------------
-// 20 - 
+// 19 -
+// https://vscode.dev/profile/github/e9387331b0b6075f2ca9f26e2d1e3d64
