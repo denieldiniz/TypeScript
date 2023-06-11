@@ -24,7 +24,7 @@ class NewUser {
     nome;
     idade;
 
-    constructor(nome: string, idade: number) {
+    constructor('nome: string, idade: number) {
         this.nome = nome;
         this.idade = idade;
     }
@@ -439,7 +439,7 @@ class ParPropProd {
 }
 
 const camiseta = new ParPropProd("regata branca", 20, 19.90);    
-console.log(camiseta);
+// console.log(camiseta);
 // console.log(camiseta.nome);
 // console.log(camiseta.getPreco);
 // console.log(camiseta.getQuantidade);
@@ -447,13 +447,60 @@ console.log(camiseta);
 //------------------------------------------------------
 // 17 - Class expressions
 
+// criar vaiavel que recebe uma classe com generic <T> e um atributo
+
+const classeGen = class<T> {
+
+    constructor(public nome: T) {
+        this.nome = nome;
+    }
+}
+
+const cidadao = new classeGen("Isa Dionne");
+// console.log(cidadao.nome);
+// console.log(cidadao);
 
 
 //------------------------------------------------------
-// 18 - 
+// 18 - Abstract class
+
+abstract class ClasseAbstrata {
+    abstract mostraNome(): void;
+}
+
+class ExtendeAbstrata extends ClasseAbstrata {
+    
+    constructor(private nome: string) {
+        super();  // ver o motivo
+        this.nome = nome;        
+    }
+
+    mostraNome() {
+        console.log(`O nome é ${this.nome}`);
+    }
+}
+
+const objAbstrata = new ExtendeAbstrata("Zizi");
+// console.log(objAbstrata.mostraNome());
 
 //------------------------------------------------------
-// 19 - 
+// 19 - Relações entre classes
+
+class Gato {
+    nome!: string;
+}
+
+class Cachorro {
+    nome!: string;
+}
+
+const sadan: Cachorro = new Gato();
+
+console.log(sadan.constructor.name);
+
+sadan.nome = "Sadan Russein";
+
+console.log(sadan.nome);
 
 
 
