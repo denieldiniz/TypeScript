@@ -92,23 +92,37 @@ class User {
 //------------------------------------------------------
 // 04 - Method decorator
 
+function enumerable(value:boolean) {
+    return function(
+        target: any,
+        propertKey: string,
+        descriptor: PropertyDescriptor
+    ) {
+        descriptor.enumerable = value;
+    };
+}
+
 class Machine {
     name;
 
     constructor(name: string) {
         this.name = name;
     }
-
+    
+    @enumerable(true) //ativa/desativa a propriedade enumerable do decorator
     showName() {
         return(`O nome da máquina é ${this.name}.`);
     }
 }
 
-const trator = new Machine("\"trator pequeno\"");
+const trator = new Machine("trator pequeno");
 console.log(trator.showName());
+console.log(trator);
 
 //------------------------------------------------------
-// 05 - 
+// 05 - Assessor decorator
+
+
 
 
 
