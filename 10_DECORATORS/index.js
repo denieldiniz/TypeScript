@@ -83,16 +83,86 @@ __decorate([
     enumerable(true) //ativa/desativa a propriedade enumerable do decorator
 ], Machine.prototype, "showName", null);
 const trator = new Machine("trator pequeno");
-console.log(trator.showName());
-console.log(trator);
+// console.log(trator.showName());
+// console.log(trator);
 //------------------------------------------------------
-// 05 - Assessor decorator
+// 05 - Acessor decorator
+class Monster {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+    get getNome() {
+        return `Nome do monstro: ${this.nome}`;
+    }
+    get getIdade() {
+        return `Idade do monstro: ${this.idade}`;
+    }
+}
+__decorate([
+    enumerable(true)
+], Monster.prototype, "getNome", null);
+const pokemon = new Monster("Charmander", 23);
+// console.log(pokemon);
+// console.log(pokemon.getNome);
+// console.log(pokemon.getIdade);
 //------------------------------------------------------
-// 06 - 
+// 06 - Property decorator
+// 1-00001   << modelo do ID
+function formatarId() {
+    return function (target, propertKey) {
+        let valor;
+        const getter = function () {
+            return valor;
+        };
+        const setter = function (novoValor) {
+            valor = novoValor.padStart(5, "0");
+        };
+        Object.defineProperty(target, propertKey, {
+            set: setter,
+            get: getter
+        });
+    };
+}
+class ID {
+    constructor(id) {
+        this.id = id;
+    }
+}
+__decorate([
+    formatarId() // aplica getter e setter à classe ID
+], ID.prototype, "id", void 0);
+const identificado = new ID("1");
+identificado.id = "34";
+// console.log(identificado.id);
 //------------------------------------------------------
-// 07 - 
+// 07 - Exemplo real com Class decorator
+function dataDeCriacao(dataDeCriacao) {
+    dataDeCriacao.prototype.dataDeCriacao = new Date();
+}
+let Livro = class Livro {
+    constructor(id) {
+        this.id = id;
+    }
+};
+Livro = __decorate([
+    dataDeCriacao
+], Livro);
+let Caneta = class Caneta {
+    constructor(id) {
+        this.id = id;
+    }
+};
+Caneta = __decorate([
+    dataDeCriacao
+], Caneta);
+const cleanCode = new Livro(12);
+const bic = new Caneta(33);
+// console.log(cleanCode);
+// console.log(bic);
+// console.log(cleanCode.criacao);
 //------------------------------------------------------
-// 08 - 
+// 08 - Exemplo real com Method decorator
 //------------------------------------------------------
 // 09 - 
 //------------------------------------------------------
