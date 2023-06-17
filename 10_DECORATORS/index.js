@@ -163,6 +163,40 @@ const bic = new Caneta(33);
 // console.log(cleanCode.criacao);
 //------------------------------------------------------
 // 08 - Exemplo real com Method decorator
+function checkPostado() {
+    return function (target, key, descriptor) {
+        const funcaoFilha = descriptor.value;
+        descriptor.value = function (...args) {
+            if (args[1] === true) {
+                console.log("Essa notícia já foi postada.");
+                return null;
+            }
+            else {
+                return funcaoFilha.apply(this, args);
+            }
+        };
+        return descriptor;
+    };
+}
+;
+class Postagem {
+    constructor() {
+        this.postado = false;
+    }
+    postar(conteudo, postado) {
+        this.postado = true;
+        console.log(`Notícia: ${conteudo} \n`);
+    }
+}
+__decorate([
+    checkPostado()
+], Postagem.prototype, "postar", null);
+// const conteudo = ("\n\n-> Moraes retira sigilo das mensagens do celular de Mauro Cid <- \n \nO ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), decidiu tornar público nesta sexta-feira, 16, o conteúdo das conversas obtidas no celular do tenente-coronel Mauro Cid, ex-ajudante de ordens do ex-presidente Jair Bolsonaro. As conversas que constam de um relatório da Polícia Federal, agora revelado, trazem à tona um roteiro para um golpe de Estado. \nO ministro justificou sua decisão em decorrência da divulgação, pela imprensa, de trechos do documento que descreve os diálogos encontrados no celular de Mauro Cid. As mensagens, agora acessíveis a todos. \nNo mesmo despacho em que derrubou o sigilo do relatório, o ministro determinou que o diretor-geral da Polícia Federal instaure, “de forma imediata”, procedimento para apurar o vazamento de documentos sigilosos, o que pode configurar crime.");
+const noticia = new Postagem();
+noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
+noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
+noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
+noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
 //------------------------------------------------------
 // 09 - 
 //------------------------------------------------------
