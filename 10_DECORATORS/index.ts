@@ -253,18 +253,66 @@ class Postagem {
 // const conteudo = ("\n\n-> Moraes retira sigilo das mensagens do celular de Mauro Cid <- \n \nO ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), decidiu tornar público nesta sexta-feira, 16, o conteúdo das conversas obtidas no celular do tenente-coronel Mauro Cid, ex-ajudante de ordens do ex-presidente Jair Bolsonaro. As conversas que constam de um relatório da Polícia Federal, agora revelado, trazem à tona um roteiro para um golpe de Estado. \nO ministro justificou sua decisão em decorrência da divulgação, pela imprensa, de trechos do documento que descreve os diálogos encontrados no celular de Mauro Cid. As mensagens, agora acessíveis a todos. \nNo mesmo despacho em que derrubou o sigilo do relatório, o ministro determinou que o diretor-geral da Polícia Federal instaure, “de forma imediata”, procedimento para apurar o vazamento de documentos sigilosos, o que pode configurar crime.");
 const noticia = new Postagem();
 
-noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
-noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
-noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
-noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
+// noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
+// noticia.postar("Moraes retira sigilo das mensagens.", noticia.postado);
+// noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
+// noticia.postar("Moraes mantém mensagens em sigilo.", noticia.postado);
 
 //------------------------------------------------------
-// 09 - 
+// 09 - Exemplo real com Property decorator
 
+function max(limite: number) {
+    return function (target: object, propertyKey: string) {
+        let valor: string;
 
+        const getter = function() {
+            return valor;
+        }
+
+        const setter = function(newValor: string) {
+            if (newValor.length > limite) {
+                console.log(`O valor máximo permitido é ${limite}.`);
+                return;
+            } else {
+                valor = newValor;
+            }
+        }
+
+        Object.defineProperty(target, propertyKey, {
+            get: getter,
+            set: setter
+        })
+    }
+}
+
+class Admin {
+    @max(12)
+    login;
+
+    constructor(login: string) {
+        this.login = login;       
+    }
+}
+
+const usuarioMaster = new Admin("denieldiniz");
+// console.log(usuarioMaster.login);
 
 //------------------------------------------------------
 // 10 - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
