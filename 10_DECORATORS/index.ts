@@ -294,7 +294,7 @@ class Admin {
     }
 }
 
-const usuarioMaster = new Admin("denieldiniz");
+// const usuarioMaster = new Admin("denieldiniz");
 // console.log(usuarioMaster.login);
 
 //------------------------------------------------------

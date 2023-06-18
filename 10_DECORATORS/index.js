@@ -228,7 +228,7 @@ class Admin {
 __decorate([
     max(12)
 ], Admin.prototype, "login", void 0);
-const usuarioMaster = new Admin("denieldiniz");
+// const usuarioMaster = new Admin("denieldiniz");
 // console.log(usuarioMaster.login);
 //------------------------------------------------------
 // 10 - 
