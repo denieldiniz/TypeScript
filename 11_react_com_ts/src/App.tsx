@@ -1,6 +1,7 @@
 import React from "react";
 // import logo from './logo.svg';
 // import './App.css';
+import { FirstComponent } from "./components/FirstComponent"; // da aula 04
 
 function App() {
   //------------------------------------------------------
@@ -19,7 +20,7 @@ function App() {
   // 03 -
 
   //------------------------------------------------------
-  // 04 -
+  // 04 - Importação de componentes
 
   //------------------------------------------------------
   // 05 -
@@ -56,6 +57,10 @@ function App() {
 
       {/* 02 -------------------------*/}
       <h3>{saudacao(nome)} </h3>
+
+      {/* 04 -------------------------*/}
+      <FirstComponent />
+      <FirstComponent />
     </div>
   );
 }
