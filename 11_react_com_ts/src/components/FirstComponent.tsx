@@ -36,7 +36,7 @@ import * as R from "react";
 export function FirstComponent(): R.ReactElement {
   return (
     <div>
-      <h1>Meu primeiro Componente (aula 04)</h1>
+      <h3>Meu primeiro Componente (aula 04)</h3>
     </div>
   );
 }
