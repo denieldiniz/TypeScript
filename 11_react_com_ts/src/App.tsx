@@ -1,7 +1,7 @@
 import React from "react";
 // import logo from './logo.svg';
 // import './App.css';
-import { FirstComponent } from "./components/FirstComponent"; // da aula 04
+import { FirstComponent } from "./components/FirstComponent";
 import SecondComponent from "./components/SecondCOmponent";
 import Desestruturado from "./components/Desestruturado";
 
@@ -17,30 +17,6 @@ function App() {
   const saudacao = (nome: string): string => {
     return `Olá ${nome}!`;
   };
-
-  //------------------------------------------------------
-  // 03 -
-
-  //------------------------------------------------------
-  // 04 - Importação de componentes
-
-  //------------------------------------------------------
-  // 05 - Destructurig nas Props
-
-  //------------------------------------------------------
-  // 06 -
-
-  //------------------------------------------------------
-  // 07 -
-
-  //------------------------------------------------------
-  // 08 -
-
-  //------------------------------------------------------
-  // 09 -
-
-  //------------------------------------------------------
-  // 10 -
 
   return (
     <div className="App">
