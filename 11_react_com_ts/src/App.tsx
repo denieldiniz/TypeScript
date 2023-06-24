@@ -4,6 +4,7 @@ import React from "react";
 import { FirstComponent } from "./components/FirstComponent";
 import SecondComponent from "./components/SecondCOmponent";
 import Desestruturado from "./components/Desestruturado";
+import State from "./components/State";
 
 function App() {
   //------------------------------------------------------
@@ -63,6 +64,13 @@ function App() {
         numComentarios={521}
         tags={["Gugu", "apresentador", "Comerciante"]}
       />
+      <br />
+      <br />
+
+      {/* 06 - UseState(Hook) --------------- */}
+      <State />
+      <br />
+      <br />
     </div>
   );
 }
