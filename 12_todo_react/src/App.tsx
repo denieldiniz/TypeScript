@@ -1,21 +1,27 @@
+//components
 import React from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+
+// CSS
 import styles from "./App.module.css";
+
+//interfaces
+import { Task } from "./interfaces/Task";
+
 function App() {
   return (
     <div>
       <Header />
+
       <main className={styles.main}>
-        <div>
-          <h2>O que você vai fazer?</h2>
-          <p>formulário</p>
-        </div>
-        <div>
-          <h2>Suas tarefas:</h2>
-          <p>lista</p>
-        </div>
+        <TaskForm btnText="Adicionar Tarefa" />
+        <TaskList />
       </main>
+
       <Footer />
     </div>
   );
