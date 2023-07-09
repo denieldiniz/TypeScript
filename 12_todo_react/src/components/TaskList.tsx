@@ -6,7 +6,7 @@ const TaskList = (props: Props) => {
   return (
     <div>
       <h2>Suas tarefas:</h2>
-      <p>lista - TaskList.tsx</p>
+      <p>Impleentar lista no componente TaskList.tsx</p>
     </div>
   );
 };

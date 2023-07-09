@@ -18,7 +18,7 @@ function App() {
       <Header />
 
       <main className={styles.main}>
-        <TaskForm btnText="Adicionar Tarefa" />
+        <TaskForm btnText="Criar Tarefa" />
         <TaskList />
       </main>
 
